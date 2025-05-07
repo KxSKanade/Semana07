@@ -1,13 +1,135 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* src/index.css */
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* Colores y tipografía */
+:root {
+    --primary: #4e54c8;
+    --accent: #8f94fb;
+    --bg: #f5f7fa;
+    --card-bg: #ffffff;
+    --text: #333333;
+    --error: #e74c3c;
+    --radius: 8px;
+    --transition: 0.3s;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+  }
+  
+  /* Contenedor reutilizable para las páginas */
+  .container {
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  }
+  
+  /* Navbar */
+  nav {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    padding: 1rem 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition);
+  }
+  
+  nav a:hover {
+    color: var(--bg);
+  }
+  
+  nav button {
+    margin-left: auto;
+    padding: 0.5rem 1rem;
+    background: #fff;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background var(--transition);
+  }
+  
+  nav button:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+  
+  /* Formularios */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  form h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  form input {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    transition: border-color var(--transition);
+  }
+  
+  form input:focus {
+    border-color: var(--primary);
+    outline: none;
+  }
+  
+  form button {
+    padding: 0.75rem 1rem;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background var(--transition);
+  }
+  
+  form button:hover {
+    background: var(--accent);
+  }
+  
+  /* Mensajes de error */
+  .error {
+    color: var(--error);
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  /* Títulos generales */
+  h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  /* Responsivo básico */
+  @media (max-width: 480px) {
+    .container {
+      margin: 1.5rem;
+      padding: 1.5rem;
+    }
+    nav {
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+  }
+  
